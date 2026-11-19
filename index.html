@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>پرشین امپری | قوانین گپ</title>
+<title>Persian Imperi | پرشین امپری — قوانین گپ</title>
 <meta name="description" content="قوانین گپ دوستانه‌ی پرشین امپری: احترام، بازی، شوخی و انرژی مثبت.">
 <meta name="theme-color" content="#e7e3fb">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0d0b1a; --muted:#4a4568; --lilac:#e7e3fb; --num:#cfc6f6;
-    --num-dark:rgba(214,203,255,.55); --violet:#5b3bd1; --pad:clamp(18px, 3.2vw, 46px);
+    --ink:#0d0b1a; --muted:#4a4568; --lilac:#e7e3fb; --num:#9c8ce4;
+    --num-dark:rgba(219,209,255,.7); --violet:#5b3bd1; --pad:clamp(18px, 3.2vw, 46px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
@@ -31,9 +31,24 @@
     padding:18px var(--pad) 0; pointer-events:none;
   }
   .nav > *{pointer-events:auto}
-  .logo{width:40px;height:40px;display:grid;place-items:center;margin-inline-end:clamp(28px,5vw,66px)}
-  .logo svg{width:38px;height:38px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-  .logo:hover svg{transform:rotate(90deg)}
+  .logo{display:inline-flex;align-items:center;gap:10px;margin-inline-end:clamp(24px,4vw,58px)}
+  .logo__mark{
+    width:40px;height:40px;flex:none;display:block;
+    filter:drop-shadow(0 5px 12px rgba(66,32,170,.28));
+    transition:transform .6s cubic-bezier(.2,.8,.2,1), filter .4s ease;
+  }
+  .logo__mark svg{width:40px;height:40px;display:block}
+  .logo:hover .logo__mark{transform:translateY(-1px) rotate(-6deg) scale(1.05);filter:drop-shadow(0 8px 18px rgba(66,32,170,.38))}
+  .logo__word{
+    font-size:14.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+    direction:ltr;line-height:1;white-space:nowrap;
+  }
+  .logo__word::after{
+    content:"";display:block;height:2px;margin-top:5px;border-radius:2px;
+    background:linear-gradient(90deg,#7a4bff,rgba(122,75,255,0));
+    transform:scaleX(.45);transform-origin:left;transition:transform .45s ease;
+  }
+  .logo:hover .logo__word::after{transform:scaleX(1)}
   .nav__links{display:flex;gap:clamp(22px,4.5vw,58px);font-size:15.5px;font-weight:400}
   .nav__links a{position:relative}
   .nav__links a::after{
@@ -128,9 +143,9 @@
     font-size:clamp(96px,13vw,220px); color:var(--num);
   }
   .title{font-weight:700;font-size:clamp(27px,3.1vw,50px);line-height:1.4;letter-spacing:-.01em}
-  .copy{margin-top:20px;font-size:clamp(13.5px,1.05vw,16px);line-height:1.95;color:var(--muted);max-width:440px}
+  .copy{margin-top:20px;font-size:clamp(15.5px,1.15vw,17.5px);line-height:1.95;color:var(--muted);max-width:440px}
   .rules{margin-top:22px;display:grid;gap:9px;list-style:none;max-width:440px}
-  .rules li{display:flex;gap:9px;font-size:clamp(13px,1vw,15px);line-height:1.8;color:var(--muted)}
+  .rules li{display:flex;gap:9px;font-size:clamp(14.5px,1.05vw,16.5px);line-height:1.8;color:var(--muted)}
   .rules li::before{content:"✦";color:var(--violet);font-size:11px;line-height:2.1;flex:none}
 
   .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease, transform 1.1s cubic-bezier(.2,.8,.15,1)}
@@ -175,11 +190,20 @@
   /* ---------- footer ---------- */
   .foot{background:#e7e3fb;height:100vh;height:100svh;z-index:1}
   .foot .brand{position:absolute;inset-inline-start:var(--pad);bottom:80px}
-  .foot .brand strong{display:block;font-size:clamp(28px,3vw,44px);font-weight:700;letter-spacing:-.01em}
-  .foot .brand span{font-size:13.5px;color:var(--muted)}
+  .foot .brand__logo{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .foot .brand__mark{
+    width:48px;height:48px;flex:none;display:block;
+    filter:drop-shadow(0 6px 16px rgba(66,32,170,.3));
+  }
+  .foot .brand__mark svg{width:48px;height:48px;display:block}
+  .foot .brand strong{
+    display:block;font-size:clamp(26px,2.7vw,40px);font-weight:700;
+    letter-spacing:.01em;line-height:1.15;direction:ltr;
+  }
+  .foot .brand span{font-size:15px;color:var(--muted)}
   .foot .cols{
     position:absolute;inset-inline-end:calc(var(--pad) + 120px);bottom:80px;
-    display:flex;gap:64px;font-size:14.5px;font-weight:500;
+    display:flex;gap:64px;font-size:15.5px;font-weight:500;
   }
   .foot .cols a{display:block;line-height:2}
   .foot .cols a:hover{color:var(--violet)}
@@ -189,8 +213,8 @@
 
   .accept{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:18px}
   .accept__check{
-    display:inline-flex;align-items:center;gap:9px;cursor:pointer;user-select:none;
-    font-size:13.5px;font-weight:500;color:var(--muted);
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;
+    font-size:15px;font-weight:500;color:#2b2550;
   }
   .accept__check input{
     appearance:none;-webkit-appearance:none;margin:0;width:20px;height:20px;flex:none;
@@ -203,9 +227,30 @@
     border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg);
   }
   .accept__check input:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
-  .accept .join{margin-top:0}
-  .accept__link{opacity:.4;pointer-events:none;transition:opacity .3s ease}
-  .accept__link[aria-disabled="false"]{opacity:1;pointer-events:auto}
+
+  .accept__code{
+    display:flex;flex-direction:column;align-items:center;gap:4px;
+    padding:12px 20px;border:2px dashed rgba(91,59,209,.45);border-radius:14px;
+    background:#fff;
+  }
+  .accept__code[hidden]{display:none}
+  .accept__code span{font-size:13px;font-weight:500;color:var(--muted);line-height:1.8}
+  .accept__code-row{display:flex;align-items:center;gap:10px;direction:ltr}
+  .accept__code b{
+    font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:.14em;
+    color:var(--violet);line-height:1.4;direction:ltr;font-variant-numeric:tabular-nums;
+  }
+  .code-btn{
+    font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;
+    padding:7px 12px;border-radius:9px;cursor:pointer;
+    border:1.5px solid rgba(91,59,209,.4);background:#f4f1ff;color:#3a2599;
+    direction:rtl;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .15s ease;
+  }
+  .code-btn:hover{background:#ebe4ff;border-color:var(--violet)}
+  .code-btn:active{transform:scale(.95)}
+  .code-btn:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+  .code-btn.is-done{background:var(--violet);border-color:var(--violet);color:#fff}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
   /* ---------- footer kids ---------- */
   .kids{
@@ -215,18 +260,18 @@
   }
   .kid{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px}
   .kid svg{width:clamp(58px,5.4vw,84px);height:auto;overflow:visible}
-  .kid__name{font-size:12.5px;font-weight:600;color:var(--muted)}
+  .kid__name{font-size:14px;font-weight:600;color:var(--muted)}
   .kids.play .kid--amir svg{animation:kidBob 1.6s ease-in-out infinite}
-  .kids.play .kid--niki svg{animation:kidBob 1.6s ease-in-out .8s infinite}
+  .kids.play .kid--mahsa svg{animation:kidBob 1.6s ease-in-out .8s infinite}
   @keyframes kidBob{
     0%,100%{transform:translateY(0) rotate(0deg)}
     35%{transform:translateY(-5px) rotate(-2deg)}
     70%{transform:translateY(-1px) rotate(1.5deg)}
   }
   .kid__art{display:block;transform-origin:50% 100%}
-  .kids.play .kid--niki .kid__art{animation:leanNiki 20s ease-in-out infinite}
+  .kids.play .kid--mahsa .kid__art{animation:leanMahsa 20s ease-in-out infinite}
   .kids.play .kid--amir .kid__art{animation:leanAmir 20s ease-in-out infinite}
-  @keyframes leanNiki{
+  @keyframes leanMahsa{
     0%,26%{transform:none}
     30%,44%{transform:translateX(4px) rotate(9deg)}
     48%,50%{transform:none}
@@ -242,15 +287,15 @@
   }
 
   .tease{opacity:0}
-  .kids.play .kid--niki .tease{animation:teaseNiki 20s ease-in-out infinite}
+  .kids.play .kid--mahsa .tease{animation:teaseMahsa 20s ease-in-out infinite}
   .kids.play .kid--amir .tease{animation:teaseAmir 20s ease-in-out infinite}
-  @keyframes teaseNiki{0%,27%{opacity:0}31%,44%{opacity:1}48%,100%{opacity:0}}
+  @keyframes teaseMahsa{0%,27%{opacity:0}31%,44%{opacity:1}48%,100%{opacity:0}}
   @keyframes teaseAmir{0%,49%{opacity:0}53%,64%{opacity:1}68%,100%{opacity:0}}
 
   .arm{transform-box:view-box}
   .arm--wave{transform-origin:80px 114px}
   .kids.play .arm--wave{animation:waveArm 1.15s ease-in-out infinite}
-  .kids.play .kid--niki .arm--wave{animation-delay:.35s}
+  .kids.play .kid--mahsa .arm--wave{animation-delay:.35s}
   @keyframes waveArm{
     0%,100%{transform:rotate(-8deg)}
     50%{transform:rotate(15deg)}
@@ -260,6 +305,21 @@
     border:2.5px solid #2b2550; border-radius:50%; background:#cfc6f6;
   }
   .kids.play .ball{animation:toss 3.4s ease-in-out infinite}
+
+  /* at the end of the loop Amir floats a heart over to Mahsa */
+  .heart{
+    position:absolute; left:calc(50% - 9px); bottom:96px; width:18px; height:18px;
+    opacity:0; pointer-events:none;
+    --reach: calc((clamp(58px,5.4vw,84px) + clamp(16px,3.2vw,46px)) / 2 + 12px);
+  }
+  .kids.play .heart{animation:heartGift 20s ease-in-out infinite}
+  @keyframes heartGift{
+    0%,68%{opacity:0;transform:translate(var(--reach),0) scale(.5)}
+    73%{opacity:1;transform:translate(var(--reach),-10px) scale(.95)}
+    79%{opacity:1;transform:translate(0,-46px) scale(1.05)}
+    87%{opacity:1;transform:translate(calc(var(--reach) * -1),-6px) scale(1)}
+    92%,100%{opacity:0;transform:translate(calc(var(--reach) * -1),0) scale(.85)}
+  }
   @keyframes toss{
     0%{transform:translate(-32px,0) scaleY(.9)}
     15%{transform:translate(-12px,-46px) scaleY(1)}
@@ -273,7 +333,7 @@
   .bubble{
     position:absolute; top:-38px; white-space:nowrap;
     padding:5px 9px; border:2px solid #2b2550; border-radius:13px;
-    background:#fff; color:var(--ink); font-size:11.5px; font-weight:600;
+    background:#fff; color:var(--ink); font-size:13px; font-weight:600;
     box-shadow:0 6px 18px rgba(60,40,120,.12);
     opacity:0; animation-duration:20s; animation-timing-function:ease-in-out;
     animation-iteration-count:infinite;
@@ -283,13 +343,13 @@
     background:#fff; border-right:2px solid #2b2550; border-bottom:2px solid #2b2550;
     transform:rotate(45deg);
   }
-  .kid--niki .bubble{left:-6px}
-  .kid--niki .bubble::after{left:16px}
+  .kid--mahsa .bubble{left:-6px}
+  .kid--mahsa .bubble::after{left:16px}
   .kid--amir .bubble{right:-6px}
   .kid--amir .bubble::after{right:16px}
-  .kids.play .kid--niki .bubble--a{animation-name:bubbleA}
+  .kids.play .kid--mahsa .bubble--a{animation-name:bubbleA}
   .kids.play .kid--amir .bubble--a{animation-name:bubbleB}
-  .kids.play .kid--niki .bubble--b{animation-name:bubbleC}
+  .kids.play .kid--mahsa .bubble--b{animation-name:bubbleC}
   .kids.play .kid--amir .bubble--b{animation-name:bubbleD}
   @keyframes bubbleA{0%,1%{opacity:0;transform:translateY(6px) scale(.94)}4%,13%{opacity:1;transform:none}17%,100%{opacity:0;transform:translateY(-4px) scale(.98)}}
   @keyframes bubbleB{0%,15%{opacity:0;transform:translateY(6px) scale(.94)}18%,27%{opacity:1;transform:none}31%,100%{opacity:0;transform:translateY(-4px) scale(.98)}}
@@ -310,6 +370,8 @@
   /* ---------- mobile ---------- */
   @media (max-width:760px){
     .nav__links{display:none}
+    .logo{margin-inline-end:auto;gap:8px}
+    .logo__word{font-size:11.5px;letter-spacing:.11em}
     .hero h1{top:14vh}
     .hero__side{top:auto;bottom:11vh;left:18px;right:18px;width:auto;text-align:center}
     .hero__side .join{margin-top:24px}
@@ -324,19 +386,28 @@
     .s2 .flower--iris{width:100vw;bottom:-26vw}
     .foot .cta{top:16vh}
     .foot .cols{display:none}
-    .foot .brand{bottom:250px}
+    .foot .brand{bottom:200px}
+    .foot .brand__logo{margin-bottom:6px}
+    .foot .brand__mark, .foot .brand__mark svg{width:34px;height:34px}
+    .foot .brand strong{font-size:22px}
+    .accept{gap:14px}
+    .accept__code{padding:10px 16px;gap:2px}
+    .accept__code b{font-size:19px;letter-spacing:.12em}
+    .accept__code span{font-size:12px;line-height:1.7}
     .rules{margin-top:18px}
     .kids{bottom:62px;gap:16px}
     .kid svg{width:58px}
-    .kid__name{font-size:11px}
-    .bubble{font-size:10px;padding:4px 7px;top:-30px;border-width:1.6px}
+    .kid__name{font-size:13px}
+    .bubble{font-size:12px;padding:5px 8px;top:-32px;border-width:1.6px}
     .ball{width:13px;height:13px;bottom:17px;border-width:2px}
+    .heart{width:16px;height:16px;left:calc(50% - 8px);bottom:78px}
   }
   @media (max-width:760px) and (max-height:700px){
     .s1 .text, .s3 .text{bottom:7vh}
     .s1 .num{top:11vh}
   }
   @media (min-width:761px) and (max-height:820px){
+    .foot .cta{top:14vh}
     .hero h1{font-size:clamp(38px,4.7vw,82px)}
     .hero__cue{top:calc(15.5vh + 12.8vw + 14px)}
   }
@@ -344,13 +415,41 @@
 </head>
 <body>
 
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="piMark" x1="6" y1="2" x2="58" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b228f"/>
+      <stop offset=".55" stop-color="#2a1477"/>
+      <stop offset="1" stop-color="#180a4d"/>
+    </linearGradient>
+    <linearGradient id="piGold" x1="44" y1="14" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff0c4"/>
+      <stop offset=".5" stop-color="#f0cf85"/>
+      <stop offset="1" stop-color="#d8ac57"/>
+    </linearGradient>
+    <radialGradient id="piGloss" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
 <div class="loader" id="loader">
   <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0c1.2 11.5 8.5 18.8 20 20-11.5 1.2-18.8 8.5-20 20-1.2-11.5-8.5-18.8-20-20C11.5 18.8 18.8 11.5 20 0z" fill="#0d0b1a"/></svg>
 </div>
 
 <nav class="nav">
-  <a class="logo" href="#top" aria-label="خانه">
-    <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M20 0c1.2 11.5 8.5 18.8 20 20-11.5 1.2-18.8 8.5-20 20-1.2-11.5-8.5-18.8-20-20C11.5 18.8 18.8 11.5 20 0z"/></svg>
+  <a class="logo" href="#top" aria-label="Persian Imperi — خانه">
+    <span class="logo__mark">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#piMark)"/>
+        <rect x="3.1" y="3.1" width="57.8" height="57.8" rx="17" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
+        <circle cx="21" cy="17" r="15" fill="url(#piGloss)"/>
+        <path d="M18 48.6V16.4h9.6a9 9 0 0 1 0 18h-9.6" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="44.6" y="16.4" width="5" height="32.2" rx="2.5" fill="url(#piGold)"/>
+      </svg>
+    </span>
+    <span class="logo__word">Persian Imperi</span>
   </a>
   <div class="nav__links">
     <a href="#rule-1">قانون‌ها</a>
@@ -426,20 +525,36 @@
     <div class="cta">
       <h2 class="title reveal">قانون‌ها رو خوندی؟</h2>
       <p class="copy reveal d1">پس خوش اومدی! با رعایت همین چند خط ساده، پرشین امپری یه جای امن برای بازی و خندیدن می‌مونه.</p>
-      <div class="accept reveal d2">
+            <div class="accept reveal d2">
         <label class="accept__check">
           <input type="checkbox" id="acceptRules">
           <span>قانون‌ها رو پذیرفتم</span>
         </label>
-        <a class="join accept__link" href="this link" aria-disabled="true" tabindex="-1">
-          <i><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 1L3 5l4 4"/></svg></i>
-         لینک عضویت در گپ
-        </a>
+        <div class="accept__code" id="acceptCode" hidden>
+          <span>کد عضویت شما</span>
+          <div class="accept__code-row">
+            <b id="acceptCodeValue">------</b>
+            <button type="button" class="code-btn" id="copyCode">کپی</button>
+          </div>
+          <span>این کد رو برای عضویت به ادمین ارسال کنید.</span>
+          <span class="sr-only" id="copyStatus" role="status" aria-live="polite"></span>
+        </div>
       </div>
     </div>
     <div class="brand reveal">
-      <strong>پرشین امپری</strong>
-      <span>Persian Imperi — گپ دور همی و بازی</span>
+      <div class="brand__logo">
+        <span class="brand__mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#piMark)"/>
+            <rect x="3.1" y="3.1" width="57.8" height="57.8" rx="17" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
+            <circle cx="21" cy="17" r="15" fill="url(#piGloss)"/>
+            <path d="M18 48.6V16.4h9.6a9 9 0 0 1 0 18h-9.6" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="44.6" y="16.4" width="5" height="32.2" rx="2.5" fill="url(#piGold)"/>
+          </svg>
+        </span>
+        <strong>Persian Imperi</strong>
+      </div>
+      <span>پرشین امپری — گپ دور همی و بازی</span>
     </div>
     <div class="cols reveal d1">
       <div>
@@ -484,7 +599,7 @@
         </span>
         <span class="kid__name">امیر</span>
       </div>
-      <div class="kid kid--niki">
+      <div class="kid kid--mahsa">
         <div class="bubble bubble--a">خوش اومدی به گپ!</div>
         <div class="bubble bubble--b">گیرت آوردم!</div>
         <span class="kid__art">
@@ -524,6 +639,9 @@
         <span class="kid__name">مهسا</span>
       </div>
       <span class="ball" aria-hidden="true"></span>
+      <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 20.4S4.4 15.6 4.4 10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.6 2.8c0 5.4-7.6 10.2-7.6 10.2z" fill="#e2567a" stroke="#2b2550" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 </main>
@@ -601,17 +719,81 @@
   window.addEventListener('resize', parallax);
   parallax();
 
-  // the join link unlocks only after the rules checkbox is ticked
+  // ticking the rules checkbox shows a six-digit code to send to the admin.
+  // both the code and the ticked state are kept in localStorage, so a refresh
+  // or reopening the tab never swaps the code the admin already received
   var acceptBox = document.getElementById('acceptRules');
-  var acceptLink = document.querySelector('.accept__link');
-  if (acceptBox && acceptLink) {
+  var acceptCode = document.getElementById('acceptCode');
+  var acceptCodeValue = document.getElementById('acceptCodeValue');
+  var CODE_KEY = 'persianImperi.accept.code';
+  var TICK_KEY = 'persianImperi.accept.ticked';
+
+  function readStore(key) {
+    try { return window.localStorage.getItem(key); } catch (err) { return null; }
+  }
+  function writeStore(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (err) {}
+  }
+
+  var joinCode = readStore(CODE_KEY) || '';
+  if (!/^[0-9]{6}$/.test(joinCode)) joinCode = '';
+
+  if (acceptBox) {
+    if (readStore(TICK_KEY) === '1') acceptBox.checked = true;
+
     var syncAccept = function () {
       var ok = acceptBox.checked;
-      acceptLink.setAttribute('aria-disabled', ok ? 'false' : 'true');
-      acceptLink.tabIndex = ok ? 0 : -1;
+      if (ok && !joinCode) {
+        joinCode = String(Math.floor(100000 + Math.random() * 900000));
+        writeStore(CODE_KEY, joinCode);
+      }
+      writeStore(TICK_KEY, ok ? '1' : '0');
+      if (acceptCode && acceptCodeValue) {
+        acceptCodeValue.textContent = joinCode || '------';
+        acceptCode.hidden = !ok;
+      }
     };
     acceptBox.addEventListener('change', syncAccept);
     syncAccept();
+  }
+
+  // copy the code to the clipboard and confirm it briefly
+  var copyBtn = document.getElementById('copyCode');
+  var copyStatus = document.getElementById('copyStatus');
+  if (copyBtn && acceptCodeValue) {
+    var copyTimer;
+    var copied = function () {
+      copyBtn.textContent = 'کپی شد ✓';
+      copyBtn.classList.add('is-done');
+      if (copyStatus) copyStatus.textContent = 'کد کپی شد';
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(function () {
+        copyBtn.textContent = 'کپی';
+        copyBtn.classList.remove('is-done');
+        if (copyStatus) copyStatus.textContent = '';
+      }, 1800);
+    };
+    var copyFallback = function (text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { if (document.execCommand('copy')) copied(); } catch (err) {}
+      document.body.removeChild(ta);
+    };
+    copyBtn.addEventListener('click', function () {
+      var text = (acceptCodeValue.textContent || '').trim();
+      if (!/^[0-9]{6}$/.test(text)) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(copied, function () { copyFallback(text); });
+      } else {
+        copyFallback(text);
+      }
+    });
   }
 
   // the kids restart their play loop every time the footer comes into view
@@ -677,25 +859,27 @@ function pickKeys() {
         { x: -0.02, y: -0.08, s: 0.92, yaw: 105, pitch: 4, roll: 0 }
       ];
 
-  // footer: park the dragonfly low and to the side, between the CTA and the kids,
-  // so it never sits on the "بریم بازی" button at any width or height
+  // footer: on phones it parks above the CTA, on wide screens between the CTA and the kids
   const H = innerHeight;
-  const s = innerWidth <= 768 ? 0.55 : 0.8;
+  const narrow = innerWidth <= 760;
+  const s = narrow ? 0.4 : 0.8;
   const half = 0.32 * s * H * 0.4 * 0.5;
   const cta = document.querySelector('.foot .cta');
-  const kidsEl = document.querySelector('.kids');
-  const brandEl = document.querySelector('.foot .brand');
-  const colsEl = document.querySelector('.foot .cols');
-  let bandBottom = kidsEl ? kidsEl.offsetTop - half - 8 : H * 0.82;
-  if (brandEl) bandBottom = Math.min(bandBottom, brandEl.offsetTop - half - 8);
-  if (colsEl && getComputedStyle(colsEl).display !== 'none') {
-    bandBottom = Math.min(bandBottom, colsEl.offsetTop - half - 8);
+  let center;
+  if (narrow) {
+    const nav = document.querySelector('.nav');
+    const navBottom = nav ? nav.offsetHeight : 0;
+    const ctaTop = cta ? cta.offsetTop : H * 0.16;
+    center = (navBottom + ctaTop) / 2;
+  } else {
+    const kidsEl = document.querySelector('.kids');
+    const bandTop = cta ? cta.offsetTop + cta.offsetHeight + 16 : H * 0.5;
+    const bandBottom = kidsEl ? kidsEl.offsetTop - half - 8 : H * 0.82;
+    center = bandTop + Math.max(0, bandBottom - bandTop) / 2;
   }
-  const bandTop = cta ? cta.offsetTop + cta.offsetHeight + 16 : H * 0.5;
-  const center = bandTop + Math.max(0, bandBottom - bandTop) / 2;
 
   keys[keys.length - 1] = {
-    x: -0.62,
+    x: narrow ? -0.52 : -0.62,
     y: Math.max(-0.92, Math.min(0.92, 1 - (center / H) * 2)),
     s, yaw: 110, pitch: 4, roll: 0
   };
@@ -848,9 +1032,9 @@ function init() {
     shape.closePath();
 
     const membrane = g.createLinearGradient(0, 0, W, 0);
-    membrane.addColorStop(0, 'rgba(206,222,255,0.62)');
-    membrane.addColorStop(0.4, 'rgba(186,208,255,0.34)');
-    membrane.addColorStop(1, 'rgba(232,226,255,0.18)');
+    membrane.addColorStop(0, 'rgba(248,250,255,0.96)');
+    membrane.addColorStop(0.45, 'rgba(228,234,255,0.88)');
+    membrane.addColorStop(1, 'rgba(255,255,255,0.74)');
     g.fillStyle = membrane;
     g.fill(shape);
 
@@ -863,12 +1047,12 @@ function init() {
       g.beginPath();
       g.moveTo(6, mid + spread * 14);
       g.bezierCurveTo(W * 0.32, mid + spread * 62, W * 0.66, mid + spread * 62, W * 0.97, mid + spread * 16);
-      g.strokeStyle = 'rgba(42,50,88,0.5)';
-      g.lineWidth = 2.6;
+      g.strokeStyle = 'rgba(36,44,82,0.8)';
+      g.lineWidth = 3.4;
       g.stroke();
     }
-    g.strokeStyle = 'rgba(48,56,96,0.28)';
-    g.lineWidth = 1.1;
+    g.strokeStyle = 'rgba(44,52,92,0.42)';
+    g.lineWidth = 1.4;
     for (let x = 46; x < W - 10; x += 34) {
       const hh = 72 * Math.sin(Math.PI * Math.min(1, x / W));
       g.beginPath();
@@ -878,15 +1062,23 @@ function init() {
     }
 
     const glow = g.createLinearGradient(0, mid - 96, 0, mid + 96);
-    glow.addColorStop(0, 'rgba(255,255,255,0.32)');
-    glow.addColorStop(0.45, 'rgba(160,196,255,0.06)');
-    glow.addColorStop(1, 'rgba(255,255,255,0.28)');
+    glow.addColorStop(0, 'rgba(255,255,255,0.42)');
+    glow.addColorStop(0.45, 'rgba(198,206,255,0.1)');
+    glow.addColorStop(1, 'rgba(255,255,255,0.38)');
     g.fillStyle = glow;
     g.fillRect(0, 0, W, H);
     g.restore();
 
-    g.strokeStyle = 'rgba(36,44,80,0.62)';
-    g.lineWidth = 4;
+    // shadowed rim so the glassy wing still reads on pale sections
+    g.save();
+    g.shadowColor = 'rgba(38,46,88,0.4)';
+    g.shadowBlur = 14;
+    g.strokeStyle = 'rgba(32,40,78,0.9)';
+    g.lineWidth = 5;
+    g.stroke(shape);
+    g.restore();
+    g.strokeStyle = 'rgba(24,32,66,0.95)';
+    g.lineWidth = 2;
     g.stroke(shape);
 
     const tex = new THREE.CanvasTexture(cvs);
@@ -909,7 +1101,7 @@ function init() {
   const wingRig = new THREE.Group();
   model.add(wingRig);
   const wingGroups = [];
-  const wingMats = [0.94, 0.32, 0.32].map(op => new THREE.MeshBasicMaterial({
+  const wingMats = [0.96, 0.4, 0.4].map(op => new THREE.MeshBasicMaterial({
     map: wingTex, transparent: true, opacity: op, side: THREE.DoubleSide,
     depthWrite: false, color: 0xffffff
   }));
